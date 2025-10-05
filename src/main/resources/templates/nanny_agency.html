@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nokwanda Nanny Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: blur(1.5px);
+            display: block;
+        }
+
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        details {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            flex-basis: 300px;
+            color: #000;
+        }
+
+        details:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.3em;
+            outline: none;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+            color: #000;
+        }
+
+        summary::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.2s ease-in-out;
+            color: #000;
+        }
+
+        details[open] summary::before {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        p {
+            margin: 15px 0 0;
+            line-height: 1.6;
+            text-align: left;
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+            padding-top: 15px;
+            color: #000;
+        }
+        
+        /* New CSS for the details section below the image */
+        .details-section {
+            width: 100%;
+            max-width: 900px; /* Gives more room for the details */
+            margin: 40px auto; /* Centers the details section and adds space */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* The details tags will now be within this new section */
+        .details-section details {
+            flex-basis: auto; /* Let the details naturally size */
+            flex-grow: 1; /* Make them grow equally */
+        }
+
+        /* --- Form Styling --- */
+        h1 {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto 40px; /* Centers the form and adds bottom margin */
+        }
+        
+        form br {
+            display: none;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="image-container">
+    <img src="nanny_photos/nanny.png" alt="Nanny Agency">
+    <div class="overlay-content">
+        </div>
+</div>
+
+<div class="details-section">
+    <details>
+        <summary>Welcome info</summary>
+        <p>Welcome to Nokwanda Nanny Agency, your premier destination for exceptional childcare solutions. 
+            We understand that finding the right nanny is a deeply personal decision, and we are committed to making the process seamless and stress-free. 
+            Our mission is to provide peace of mind by connecting families with trustworthy, experienced, and compassionate nannies who not only meet your needs 
+            but also exceed 
+            your expectations in nurturing and caring for your children.</p>
+    </details>
+    <details>
+        <summary>About</summary>
+        <p>We are a trusted nanny agency dedicated to connecting families with caring, experienced, and thoroughly screened childcare professionals. 
+            Our mission is to provide peace of mind by matching each familys unique needs with nannies who offer a safe, nurturing, and engaging environment for children to grow and thrive.</p>
+    </details>
+    <details>
+        <summary>Contact</summary>
+        <p>Email: example@example.com<br>Sneliso Hlela<br>Phone: +27 61 492 9047</p>
+    </details>
+</div>
+
+<form method="post" action="">
+    <h1>Register With Us</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname">
+    <label for="contact">Contact:</label>
+    <input type="number" id="contact" name="contact">
+    <label for="Email">Email:</label>
+    <input type="text" id="email" name="email"> 
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
