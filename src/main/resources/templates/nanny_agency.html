@@ -1,163 +1,256 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nokwanda Nanny Agency</title>
+    <title>Nokwanda Nanny Agency - Exceptional Childcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===========================
+           GLOBAL STYLING
+        =========================== */
+        :root {
+            --primary-color: #007bff; /* Vibrant Blue */
+            --secondary-color: #ff6f61; /* Warm Coral/Pink */
+            --text-color: #333;
+            --light-bg: #f8f9fa; /* Lighter background */
+            --white-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 10px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+            background: var(--light-bg);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
+            line-height: 1.7;
         }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* ===========================
+           HERO IMAGE CYCLING
+        =========================== */
 
         .image-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
+            height: 450px;
+            overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .image-container img {
+            position: absolute;
             width: 100%;
-            height: auto;
-            filter: blur(1.5px);
-            display: block;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: imageFade 20s infinite;
+            filter: brightness(80%);
+        }
+
+        /* Animate each image with a delay */
+        .image-container img:nth-child(1) { animation-delay: 0s; }
+        .image-container img:nth-child(2) { animation-delay: 5s; }
+        .image-container img:nth-child(3) { animation-delay: 10s; }
+        .image-container img:nth-child(4) { animation-delay: 15s; }
+
+
+        @keyframes imageFade {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            100% { opacity: 0; }
         }
 
         .overlay-content {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4); /* Darker overlay for text contrast */
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .overlay-content h1 {
+            color: var(--white-bg);
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .overlay-content p {
+            color: var(--white-bg);
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-top: 10px;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+
+        /* ===========================
+           DETAILS CARDS SECTION
+        =========================== */
+
+        .details-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         details {
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 15px 20px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-            flex-basis: 300px;
-            color: #000;
+            background: var(--white-bg);
+            border-radius: var(--border-radius);
+            padding: 20px 25px;
+            border: 1px solid #e9ecef;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
 
         details:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         summary {
             cursor: pointer;
             font-weight: 600;
             font-size: 1.3em;
-            outline: none;
-            list-style: none;
+            padding-left: 35px;
             position: relative;
-            padding-left: 25px;
-            color: #000;
+            color: var(--primary-color);
+            outline: none;
         }
 
         summary::before {
-            content: '▶';
+            content: "▶";
             position: absolute;
             left: 0;
             top: 50%;
-            transform: translateY(-50%) rotate(0deg);
-            transition: transform 0.2s ease-in-out;
-            color: #000;
+            transform: translateY(-50%) scale(0.8);
+            transition: 0.3s ease;
+            color: var(--secondary-color);
         }
 
         details[open] summary::before {
-            transform: translateY(-50%) rotate(90deg);
+            transform: translateY(-50%) rotate(90deg) scale(0.8);
         }
 
-        p {
-            margin: 15px 0 0;
-            line-height: 1.6;
-            text-align: left;
-            border-top: 1px solid rgba(0, 0, 0, 0.3);
+        details p {
+            margin-top: 15px;
             padding-top: 15px;
-            color: #000;
-        }
-        
-        /* New CSS for the details section below the image */
-        .details-section {
-            width: 100%;
-            max-width: 900px; /* Gives more room for the details */
-            margin: 40px auto; /* Centers the details section and adds space */
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* The details tags will now be within this new section */
-        .details-section details {
-            flex-basis: auto; /* Let the details naturally size */
-            flex-grow: 1; /* Make them grow equally */
+            border-top: 1px solid #f0f0f0;
+            font-size: 1em;
+            color: #555;
         }
 
-        /* --- Form Styling --- */
-        h1 {
+        /* ===========================
+           FORM STYLING
+        =========================== */
+
+        h2 {
             text-align: center;
-            color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            color: var(--secondary-color);
         }
-        
+
         form {
-            max-width: 400px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 0 auto 40px; /* Centers the form and adds bottom margin */
+            max-width: 500px;
+            margin: 60px auto;
+            background: var(--white-bg);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
         }
-        
-        form br {
-            display: none;
-        }
-        
+
         label {
+            font-weight: 600;
+            font-size: 1em;
+            margin-bottom: 8px;
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            color: var(--text-color);
         }
-        
+
         input[type="text"],
-        input[type="number"] {
+        input[type="number"],
+        input[type="email"] { /* Added type email */
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            padding: 14px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-bottom: 22px;
+            transition: all 0.3s ease;
+            box-sizing: border-box; /* Important for full width */
         }
-        
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0,123,255,0.25);
+            outline: none;
+        }
+
         input[type="submit"] {
             width: 100%;
-            padding: 12px;
-            background-color: #007bff;
+            padding: 15px;
+            background: var(--secondary-color);
             color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+            font-size: 1.1em;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            letter-spacing: 1px;
         }
-        
+
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background: #e65c50; /* Slightly darker coral */
+            transform: translateY(-2px);
+        }
+
+        /* ===========================
+           WHATSAPP LINK & FOOTER STYLING
+        =========================== */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .contact-info a {
+            font-weight: 600;
+        }
+
+        .whatsapp-widget-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
         }
     </style>
 </head>
@@ -165,43 +258,62 @@
 <body>
 
 <div class="image-container">
-    <img src="nanny_photos/nanny.png" alt="Nanny Agency">
+    <img src="baby1.jpg" alt="A happy baby playing with toys">
+    <img src="baby2.jpg" alt="Nanny reading to a child">
+    <img src="baby3.jpg" alt="Child being cared for by an adult">
+    <img src="baby4.jpg" alt="Smiling children being safe">
     <div class="overlay-content">
-        </div>
+        <h1>Nokwanda Nanny Agency</h1>
+        <p>Your Premier Destination for Exceptional and Trustworthy Childcare Solutions.</p>
+    </div>
 </div>
 
 <div class="details-section">
-    <details>
-        <summary>Welcome info</summary>
-        <p>Welcome to Nokwanda Nanny Agency, your premier destination for exceptional childcare solutions. 
+    <details open>
+        <summary>Welcome to Nokwanda</summary>
+        <p>Welcome to **Nokwanda Nanny Agency**, your premier destination for exceptional childcare solutions. 
             We understand that finding the right nanny is a deeply personal decision, and we are committed to making the process seamless and stress-free. 
             Our mission is to provide peace of mind by connecting families with trustworthy, experienced, and compassionate nannies who not only meet your needs 
-            but also exceed 
-            your expectations in nurturing and caring for your children.</p>
+            but also exceed your expectations in nurturing and caring for your children.</p>
     </details>
+
     <details>
-        <summary>About</summary>
+        <summary>Our Mission</summary>
         <p>We are a trusted nanny agency dedicated to connecting families with caring, experienced, and thoroughly screened childcare professionals. 
-            Our mission is to provide peace of mind by matching each familys unique needs with nannies who offer a safe, nurturing, and engaging environment for children to grow and thrive.</p>
+            Our mission is to provide peace of mind by matching each family's unique needs with nannies who offer a safe, nurturing, and engaging environment for children to grow and thrive.</p>
     </details>
+
     <details>
-        <summary>Contact</summary>
-        <p>Email: example@example.com<br>Sneliso Hlela<br>Phone: +27 61 492 9047</p>
+        <summary>Contact Details</summary>
+        <p class="contact-info">
+            **Email:** example@example.com<br>
+            **Principal:** Sneliso Hlela<br>
+            **Phone:** <a href="tel:+27614929047">+27 61 492 9047</a>
+        </p>
     </details>
 </div>
 
 <form method="post" action="">
-    <h1>Register With Us</h1>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
+    <h2>Register With Us</h2>
+    <label for="username">First Name / Username:</label>
+    <input type="text" id="username" name="username" required>
+
     <label for="surname">Surname:</label>
-    <input type="text" id="surname" name="surname">
-    <label for="contact">Contact:</label>
-    <input type="number" id="contact" name="contact">
-    <label for="Email">Email:</label>
-    <input type="text" id="email" name="email"> 
-    <input type="submit" value="Submit">
+    <input type="text" id="surname" name="surname" required>
+
+    <label for="contact">Contact Number:</label>
+    <input type="number" id="contact" name="contact" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required> <input type="submit" value="Submit Registration">
 </form>
+
+<div class="whatsapp-widget-container">
+    <a href="https://wa.me/+27614929047" target="_blank">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-495a8f95-5ff8-44e4-81d1-761a4d6ea1ac" data-elfsight-app-lazy></div>    
+    </a>
+</div>
 
 </body>
 </html>
