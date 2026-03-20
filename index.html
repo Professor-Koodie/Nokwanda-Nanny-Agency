@@ -187,6 +187,24 @@ summary{
   font-weight:700;
   font-size:1.15rem;
 }
+
+/* Responsive code */
+@media (max-width:900px) {
+  #contact { flex-direction: column; align-items: center; gap: 16px; }
+  form { max-width: 100%; width: 100%; padding: 22px; }
+  .image-container { height: 340px; }
+  .details-section { margin: 28px auto; padding: 0 10px; }
+}
+ 
+@media (max-width:600px) {
+  body { padding: 18px 10px; }
+  .overlay-content h1 { font-size: 1.55rem; }
+  .overlay-content p { font-size: 0.95rem; }
+  #contact h2 { font-size: 22px; }
+  button[type="button"] { padding: 12px; font-size: 15px; }
+  input[type="text"], input[type="email"], textarea { font-size: 14px; }
+}
+
 </style> 
 </head>
 
