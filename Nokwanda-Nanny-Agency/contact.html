@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #c0c2c5;
+
+            /* Tablet screens and below */
+@media (max-width:900px) {
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center horizontally */
+    justify-content: center; /* center vertically if needed */
+    gap: 16px;
+    text-align: center;    /* center text inside */
+  }
+
+  form {
+    max-width: 100%;
+    width: 100%;
+    padding: 22px;
+  }
+
+  .image-container {
+    height: 340px;
+    width: 100%;           /* make image scale */
+  }
+
+  .details-section {
+    margin: 28px auto;
+    padding: 0 10px;
+    text-align: center;    /* keep content centered */
+  }
+}
+
+/* Mobile screens and below */
+@media (max-width:600px) {
+  body {
+    padding: 18px 10px;
+    text-align: center;    /* center all text */
+  }
+
+  .overlay-content h1 {
+    font-size: 1.55rem;
+    text-align: center;
+  }
+
+  .overlay-content p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  #contact h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  button[type="button"] {
+    padding: 12px;
+    font-size: 15px;
+    width: 100%;           /* full width buttons */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 14px;
+    width: 100%;           /* full width inputs */
+    text-align: center;
+  }
+}
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>Welcome to the contact page.</p>
+
+
+  <h2>Contact Details</h2>
+  <p id="contact">
+    Email: mafusenzo7@gmail.com<br>
+    Phone: +27 61 492 9047
+  </p>
+<br>
+  <footer style="text-align:center; margin-top:60px; padding: 100px 20px; color: black; font-size:16px;">  
+  &copy; 2026 Nokwanda Nanny Agency. All rights reserved.
+</footer> 
+  
+</body>
+</html>
