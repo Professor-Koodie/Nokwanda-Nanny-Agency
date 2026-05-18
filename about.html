@@ -1,184 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Info</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #c0c2c5;
-            
-            
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nokwanda Nanny Agency - About</title>
 
-            /* Tablet screens and below */
-@media (max-width:900px) {
-  #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* center horizontally */
-    justify-content: center; /* center vertically if needed */
-    gap: 16px;
-    text-align: center;    /* center text inside */
-  }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  form {
-    max-width: 100%;
-    width: 100%;
-    padding: 22px;
-  }
-
-  .image-container {
-    height: 340px;
-    width: 100%;           /* make image scale */
-  }
-
-  .details-section {
-    margin: 28px auto;
-    padding: 0 10px;
-    text-align: center;    /* keep content centered */
-  }
-}
-
-/* Mobile screens and below */
-@media (max-width:600px) {
-  body {
-    padding: 18px 10px;
-    text-align: center;    /* center all text */
-  }
-
-  .overlay-content h1 {
-    font-size: 1.55rem;
-    text-align: center;
-  }
-
-  .overlay-content p {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  #contact h2 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  button[type="button"] {
-    padding: 12px;
-    font-size: 15px;
-    width: 100%;           /* full width buttons */
-  }
-
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    font-size: 14px;
-    width: 100%;           /* full width inputs */
-    text-align: center;
-  }
-}
-
-    /* ================= FOOTER ================= */
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 40px 20px;         /* POLISH: reduced padding */
-      background: #f1f1f1;        /* POLISH: soft strip background */
-      color: #333;
-      font-size: 15px;
-      border-top: 2px solid #ccc; /* POLISH: clean separation line */
-    }
-    /* ================= END FOOTER ================= */
-
-    /* Video container styling */
-.video-container {
-  width: 200%;              /* same width as your image container */
-  max-width: 200px;
-  margin: 50px left;        /* center the video */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-/* Video styling */
-.video-container video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;       /* video fills container nicely */
-  border-radius: 12px;     /* rounded corners same as container */
-}
-    /* ================= HEADER ================= */
-    header {
-      position: relative;
-      background: #756f6f; /* ribbon color */
-      color: white;
-      text-align: center;
-      padding: 20px 0;
+  <style>
+    :root{
+      --bg-a:#c0c2c5;
+      --bg-b:#ffffff;
+      --primary:#6e8efb;
+      --accent:#8be7d0;
+      --radius:14px;
+      --shadow-lg:0 12px 30px rgba(2,6,23,0.6);
     }
 
-    /* Ribbon triangle ends */
-    header::before,
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      border-top: 20px solid #756f6f; /* darker shade */
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:#0b1220;
+      background:linear-gradient(180deg,var(--bg-a) 0%, var(--bg-b) 60%);
     }
 
-    header::before { left: 0; }
-    header::after { right: 0; }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
+    /* Hero video inherited from index */
+    .video-hero{
+      position:relative;
+      width:100%;
+      height:600px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 18px 40px rgba(0,0,0,0.35);
     }
 
+    .video-hero video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-        }
-    </style>
+    .overlay-content{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      z-index:2;
+      background:rgba(255,255,255,0.15);
+      color:#000;
+    }
+
+    .overlay-content h1{
+      font-weight:800;
+    }
+
+    .overlay-content p{
+      font-weight:600;
+      max-width:700px;
+    }
+
+    .content-section{
+      padding:60px 20px;
+    }
+
+    .content-card{
+      background:#fff;
+      border-radius:16px;
+      padding:30px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+      margin-bottom:30px;
+    }
+
+    footer{
+      background:#f1f1f1;
+      color:#333;
+      font-size:15px;
+      border-top:2px solid #ccc;
+    }
+
+    @media(max-width:768px){
+      .video-hero{
+        height:320px;
+      }
+
+      .overlay-content h1{
+        font-size:1.8rem;
+      }
+
+      .overlay-content p{
+        font-size:0.95rem;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <nav>
-    <h1>More Information</h1>
-    <p>Welcome to the more info page.</p>
-    </nav>
-  </header>
 
-    <div class="video-container">
-  <video autoplay muted loop controls>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light w-100" style="background:#756f6f;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-dark" href="index.html">Nokwanda</a>
+
+      <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="service.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark active" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Video Hero -->
+<div class="video-hero">
+  <video autoplay muted loop playsinline controls>
     <source src="nxV1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
+
+  <div class="overlay-content">
+    <h1>More Information</h1>
+    <p>
+      Learn more about our mission, values,
+      and commitment to trusted childcare.
+    </p>
+  </div>
 </div>
 
-  <h2>Our Mission</h2>
-  <p id="mission">
-    Our mission is to connect families with caring, experienced childcare professionals who bring both skill 
-    and heart to their work. We believe every child deserves a safe, loving, and stimulating environment. 
-    Nokwanda is committed to supporting parents by providing flexible childcare options, ongoing caregiver 
-    training, and a strong focus on child development.
-  </p>
+<!-- Content -->
+<div class="container content-section">
 
-  <br>
+  <div class="content-card">
+    <h2 class="text-center mb-4">Our Mission</h2>
 
-  <h2>Our Values</h2>
-  <p id="values">
-    We operate on the principles of trust, integrity, and excellence. Our caregivers are carefully vetted 
-    through background checks, reference verification, and skills assessments. Nokwanda values diversity, 
-    respect, and the joy of childhood, striving to create lasting relationships between families and caregivers.
-  </p>
+    <p id="mission" class="text-center lead">
+      Our mission is to connect families with caring, experienced childcare professionals who bring both skill
+      and heart to their work. We believe every child deserves a safe, loving, and stimulating environment.
+      Nokwanda is committed to supporting parents by providing flexible childcare options, ongoing caregiver
+      training, and a strong focus on child development.
+    </p>
+  </div>
 
+  <div class="content-card">
+    <h2 class="text-center mb-4">Our Values</h2>
 
-<br>
-  <footer style="text-align:center; margin-top:60px; padding: 100px 20px; color: black; font-size:16px;">  
+    <p id="values" class="text-center lead">
+      We operate on the principles of trust, integrity, and excellence. Our caregivers are carefully vetted
+      through background checks, reference verification, and skills assessments. Nokwanda values diversity,
+      respect, and the joy of childhood, striving to create lasting relationships between families and caregivers.
+    </p>
+  </div>
+
+</div>
+
+<footer class="text-center py-4 w-100">
   &copy; 2026 Nokwanda Nanny Agency. All rights reserved.
-</footer> 
-  
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

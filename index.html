@@ -1,314 +1,164 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nokwanda Nanny Agency</title> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nokwanda Nanny Agency</title> 
 
-<style>
-:root{
-  --bg-a: #c0c2c5;
-  --bg-b: #ffffff;
-  --card: #ffffff;
-  --muted: #c0c2c5;
-  --primary: #6e8efb;
-  --accent: #8be7d0;
-  --glass: rgba(255,255,255,0.08);
-  --radius: 14px;
-  --shadow-lg: 0 12px 30px rgba(2,6,23,0.6);
-  --shadow-sm: 0 6px 18px rgba(2,6,23,0.35);
-}
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-*{box-sizing: border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:#0b1220;
-  background: linear-gradient(180deg,var(--bg-a) 0%, var(--bg-b) 60%);
-  display:grid;
-  place-items:center;
-  padding:80px 80px;
-}
+  <style>
+    /* Keep your original custom styles */
+    :root{
+      --bg-a: #c0c2c5;
+      --bg-b: #ffffff;
+      --primary: #6e8efb;
+      --accent: #8be7d0;
+      --radius: 14px;
+      --shadow-lg: 0 12px 30px rgba(2,6,23,0.6);
+    }
 
-/* Page container */
-.container{
-  width:100%;
-  max-width:920px;
-  margin-inline:auto;
-}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:#0b1220;
+      background: linear-gradient(180deg,var(--bg-a) 0%, var(--bg-b) 60%);
+    }
 
-/* Contact card */
-#contact{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  gap:32px;
-}
-
-/* Header */
-#contact h2{
-  font-size:28px;
-  margin:0 0 18px 0;
-  color:#000;
-  text-align:center;
-}
-
-
-/* Form card */
-form{
-  width:100%;
-  max-width:720px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
-  border-radius: var(--radius);
-  padding:28px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255,255,255,0.6);
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  margin-bottom:14px;
-}
-
-label{
-  font-size:13px;
-  font-weight:600;
-  color:var(--muted);
-}
-
-input[type="text"],
-input[type="email"],
-textarea{
-  width:100%;
-  padding:12px 14px;
-  font-size:15px;
-  border-radius:10px;
-  border:1px solid rgba(11,17,32,0.06);
-}
-
-textarea{min-height:120px}
-
-button[type="button"]{
-  width:100%;
-  margin-top:6px;
-  padding:14px 16px;
-  font-size:16px;
-  font-weight:700;
-  background: linear-gradient(90deg,var(--primary), #63d0ff 60%);
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-/* FULL-WIDTH IMAGE CONTAINER */
 .image-container{
   width:100%;
-  max-width:100%;
-  height:420px;
-  margin:0;
+  height:600px;
   position:relative;
   overflow:hidden;
   background:#000;
   box-shadow:0 18px 40px rgba(0,0,0,0.35);
 }
-
-.image-container img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  animation:imageFade 20s infinite;
-}
-
-.image-container img:nth-child(1){animation-delay:0s}
-.image-container img:nth-child(2){animation-delay:5s}
-.image-container img:nth-child(3){animation-delay:10s}
-.image-container img:nth-child(4){animation-delay:15s}
-
-@keyframes imageFade{
-  0%{opacity:0}
-  5%{opacity:1}
-  25%{opacity:1}
-  30%{opacity:0}
-  100%{opacity:0}
-}
-
-.image-container .overlay-content{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-}
-.image-container .overlay-content h1{
-  color:#000;
-  font-weight:800;
-}
-
-.image-container .overlay-content p{
-  color:#000;
-  font-weight:600;
-}
-
-
-@media (max-width:600px){
-  .image-container{height:260px}
-}
-
-
-
-
-
-/* Responsive code */
-/* Tablet screens and below */
-@media (max-width:900px) {
-  #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* center horizontally */
-    justify-content: center; /* center vertically if needed */
-    gap: 16px;
-    text-align: center;    /* center text inside */
-  }
-
-  form {
-    max-width: 100%;
-    width: 100%;
-    padding: 22px;
-  }
-
-  .image-container {
-    height: 340px;
-    width: 100%;           /* make image scale */
-  }
-
-  .details-section {
-    margin: 28px auto;
-    padding: 0 10px;
-    text-align: center;    /* keep content centered */
-  }
-}
-
-/* Mobile screens and below */
-@media (max-width:600px) {
-  body {
-    padding: 18px 10px;
-    text-align: center;    /* center all text */ 
-  }
-
-  .overlay-content h1 {
-    font-size: 1.55rem;
-    text-align: center;
-  }
-
-  .overlay-content p {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  #contact h2 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  button[type="button"] {
-    padding: 12px;
-    font-size: 15px;
-    width: 100%;           /* full width buttons */
-  }
-
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    font-size: 14px;
-    width: 100%;           /* full width inputs */
-    text-align: center;
-  }
-}
-
-
-/* End of responsive code */
-
-header {
-  background: #756f6f;   /* light gray background */
-  padding:15px 10px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: right; 
-}
-
-header nav {
-  display: flex;
-  justify-content: flex-end; /* push links to the right */
-  align-items: flex-start;   /* align links to the top */
-}
-
-header a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #070707;           /* dark text */
-  font-size: 18px;
-}
-
-header a:hover {
-  text-decoration: underline; /* simple hover effect */
-}
-
-
-    /* ================= FOOTER ================= */
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 40px 20px;         /* POLISH: reduced padding */
-      background: #f1f1f1;        /* POLISH: soft strip background */
-      color: #333;
-      font-size: 15px;
-      border-top: 2px solid #ccc; /* POLISH: clean separation line */
+    .image-container img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover; 
+      opacity:0;
+      animation:imageFade 20s infinite;
     }
-    /* ================= END FOOTER ================= */
+    .image-container img:nth-child(1){animation-delay:0s}
+    .image-container img:nth-child(2){animation-delay:5s}
+    .image-container img:nth-child(3){animation-delay:10s}
+    .image-container img:nth-child(4){animation-delay:15s}
+    @keyframes imageFade{
+      0%{opacity:0}
+      5%{opacity:1}
+      25%{opacity:1}
+      30%{opacity:0}
+      100%{opacity:0}
+    }
+    .overlay-content{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#000;
+    }
+    .overlay-content h1{font-weight:800}
+    .overlay-content p{font-weight:600}
 
+    footer{
+      background:#f1f1f1;
+      color:#333;
+      font-size:15px;
+      border-top:2px solid #ccc;
+    }
+    /* gpt code*/ 
+    :root{
+  --bg-a: #c0c2c5;
+  --bg-b: #ffffff;
+  --primary: #6e8efb;
+  --accent: #8be7d0;
+  --radius: 14px;
+  --shadow-lg: 0 12px 30px rgba(2,6,23,0.6);
+}
 
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color:#0b1220;
+  background: linear-gradient(180deg,var(--bg-a) 0%, var(--bg-b) 60%);
+}
 
+@media (max-width:768px){
 
+  .image-container{
+    height:350px;
+  }
 
-</style> 
+  .overlay-content h1{
+    font-size:1.8rem;
+  }
+
+  .overlay-content p{
+    font-size:0.95rem;
+    padding:0 20px;
+  }
+
+}
+
+.lead{
+  max-width:900px;
+  margin:auto;
+}
+
+@media (max-width:768px){
+  .lead{
+    font-size:1rem;
+    padding:0 15px;
+  }
+}
+  </style>
 </head>
-<body style="padding-top: 10px;">
+<body>
 
+<!-- Full-width Bootstrap Navbar -->
 <header>
-  <nav>
-    <a href="service.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar navbar-expand-lg navbar-light w-100" style="background:#756f6f;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-dark" href="#">Nokwanda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-dark" href="service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </header>
 
-
+<!-- Image Container -->
 <div class="image-container">
-    <img src="baby1.jpg" alt="A happy baby playing with toys">
-    <img src="baby2.jpg" alt="Nanny reading to a child">
-    <img src="baby3.jpg" alt="Child being cared for by an adult">
-    <img src="baby4.jpg" alt="Smiling children being safe">
-    <div class="overlay-content">
-        <h1>Nokwanda Nanny Agency</h1>
-        <p>Your Premier Destination for Exceptional and Trustworthy Childcare Solutions.</p>
-    </div>
+  <img src="baby1.jpg" alt="A happy baby playing with toys">
+  <img src="baby2.jpg" alt="Nanny reading to a child">
+  <img src="baby3.jpg" alt="Child being cared for by an adult">
+  <img src="baby4.jpg" alt="Smiling children being safe">
+  <div class="overlay-content">
+    <h1>Nokwanda Nanny Agency</h1>
+    <p>Your Premier Destination for Exceptional and Trustworthy Childcare Solutions.</p>
+  </div>
 </div>
 
-<div style="padding:50px 40px;"> 
-  <h2>Welcome to Nokwanda</h2>
-  <p id="welcome">
+<!-- Welcome Section -->
+<div class="container py-5">
+  <h2 class="text-center mb-4">Welcome to Nokwanda</h2>
+  <p class="lead text-center">
     Welcome to <strong>Nokwanda Nanny Agency</strong>, your premier destination for exceptional childcare solutions. 
     We specialize in matching families with reliable, compassionate, and highly trained childcare professionals 
     who understand the importance of nurturing young minds. Whether you need full-time, part-time, or emergency 
@@ -316,51 +166,54 @@ header a:hover {
   </p>
 </div>
 
-<section id="contact" class="container">
-<form style="padding-top: 40px;">
-<h2>Contact Us</h2>
-
-<div class="form-group">
-<label>Name:</label>
-<input type="text" id="name"> 
-</div>
-
-<div class="form-group">
-<label>Email:</label>
-<input type="email" id="email">
-</div>
-
-<div class="form-group">
-<label>Subject:</label>
-<input type="text" id="subject">
-</div>
-
-<label>Message / Contact No:</label>
-<textarea id="message"></textarea>
-
-<button type="button" onclick="sendEmail()">Send</button> 
-</form>
+<!-- Contact Section -->
+<section id="contact" class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <form class="p-4 shadow rounded bg-white" id="submission_frm">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="mb-3">
+          <label class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Subject:</label>
+          <input type="text" id="subject" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Message / Contact No:</label>
+          <textarea id="message" class="form-control"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary w-100" onclick="sendEmail(); document.getElementById('submission_frm').reset();">Send</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-emailjs.init("15Fsc2P-Ql1x2GPcV");
-</script>
-<script src="script.js"></script>
-
-<div class="whatsapp-widget-container">
+<!-- WhatsApp Widget -->
+<div class="text-center my-4">
   <a href="https://wa.me/+27614929047" target="_blank">
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-495a8f95-5ff8-44e4-81d1-761a4d6ea1ac" data-elfsight-app-lazy></div>    
   </a>
 </div>
 
-<footer style="text-align:center; margin-top:60px; padding-bottom: 40px; color: black; font-size:16px;">  
+<!-- Full-width Footer -->
+<footer class="text-center py-4 w-100">
   &copy; 2026 Nokwanda Nanny Agency. All rights reserved.
-</footer> 
+</footer>
 
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("15Fsc2P-Ql1x2GPcV");
+</script>
+<script src="script.js"></script>
 
 </body>
 </html>
