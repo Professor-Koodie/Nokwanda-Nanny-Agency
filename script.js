@@ -1,5 +1,8 @@
 //Proper working Source Code
-function sendEmail(){
+document.getElementById("submission_frm").addEventListener("submit", function(event){
+    event.preventDefault();
+    const form = event.currentTarget;
+    const submitButton = form.querySelector("button[type=submit]");
         const params = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
@@ -7,13 +10,20 @@ function sendEmail(){
                 message: document.getElementById("message").value
         };
 
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
         emailjs.send("service_mu34tfr", "template_dz4giwa", params)
             .then(function(response){
-                alert("Email Sent!!!");
+                alert("Thank you. Your enquiry has been sent.");
+                form.reset();
             })
             .catch(function(error){
-                alert("Email failed: " + (error.text || JSON.stringify(error)));
+                alert("Your enquiry could not be sent. Please call +27 61 492 9047.");
+            })
+            .finally(function(){
+                submitButton.disabled = false;
+                submitButton.textContent = "Send";
             });
-}
-//Above is the Proper working Source Code
+});
 

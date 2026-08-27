@@ -138,6 +138,7 @@ body{
           <li class="nav-item"><a class="nav-link text-dark" href="service.html">⚙️ Services</a></li> 
           <li class="nav-item"><a class="nav-link text-dark" href="about.html">📰 About</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="contact.html">📞 Contact</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="policy.html">📄 Policies</a></li>
         </ul>
       </div>
     </div>
@@ -175,22 +176,22 @@ body{
       <form class="p-4 shadow rounded bg-white" id="submission_frm">
         <h2 class="text-center mb-4">Contact Us</h2>
         <div class="mb-3">
-          <label class="form-label">Name:</label>
-          <input type="text" id="name" class="form-control">
+          <label class="form-label" for="name">Name:</label>
+          <input type="text" id="name" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label class="form-label">Email:</label>
-          <input type="email" id="email" class="form-control">
+          <label class="form-label" for="email">Email:</label>
+          <input type="email" id="email" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label class="form-label">Subject:</label>
-          <input type="text" id="subject" class="form-control">
+          <label class="form-label" for="subject">Subject:</label>
+          <input type="text" id="subject" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label class="form-label">Message / Contact No:</label>
-          <textarea id="message" class="form-control"></textarea>
+          <label class="form-label" for="message">Message / Contact No:</label>
+          <textarea id="message" class="form-control" required></textarea>
         </div>
-        <button type="button" class="btn btn-primary w-100" onclick="sendEmail(); document.getElementById('submission_frm').reset();">Send</button>
+        <button type="submit" class="btn btn-primary w-100">Send</button>
       </form>
     </div>
   </div>

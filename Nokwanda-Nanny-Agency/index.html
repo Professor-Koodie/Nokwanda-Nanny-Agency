@@ -280,6 +280,7 @@ header a:hover {
     <a href="service.html">Services</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="policy.html">Policies</a>
   </nav>
 </header>
 
@@ -309,28 +310,28 @@ header a:hover {
 <body style="padding-top: 10px;">
 
 <section id="contact" class="container">
-<form style="padding-top: 40px;">
+<form id="submission_frm" style="padding-top: 40px;">
 <h2>Contact Us</h2>
 
 <div class="form-group">
-<label>Name:</label>
-<input type="text" id="name"> 
+<label for="name">Name:</label>
+<input type="text" id="name" required> 
 </div>
 
 <div class="form-group">
-<label>Email:</label>
-<input type="email" id="email">
+<label for="email">Email:</label>
+<input type="email" id="email" required>
 </div>
 
 <div class="form-group">
-<label>Subject:</label>
-<input type="text" id="subject">
+<label for="subject">Subject:</label>
+<input type="text" id="subject" required>
 </div>
 
-<label>Message / Contact No:</label>
-<textarea id="message"></textarea>
+<label for="message">Message / Contact No:</label>
+<textarea id="message" required></textarea>
 
-<button type="button" onclick="sendEmail()">Send</button> 
+<button type="submit">Send</button> 
 </form>
 </section>
 
